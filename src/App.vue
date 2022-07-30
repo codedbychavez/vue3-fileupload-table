@@ -1,47 +1,47 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
+<script>
+import Table from './components/Table.vue';
+import TableRow from './components/TableRow.vue';
+import TableData from './components/TableData.vue';
+import data from './data'
+
+export default {
+  data() {
+    return {
+      headers: ['ID', 'First Name', 'Last Name', 'Resume'],
+      users: data,
+    }
+  },
+  components: {
+    Table,
+    TableRow,
+    TableData
+}
+}
 </script>
 
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="p-4">
+    <Table :headers="headers">
+      <TableRow v-for="user in users" :key="user.id">
+        <TableData>
+          {{ user.id }}
+        </TableData>
+        <TableData>
+          {{ user.firstName }}
+        </TableData>
+        <TableData>
+          {{ user.lastName }}
+        </TableData>
+        <TableData>
+          {{ user.resume }}
+        </TableData>
+      </TableRow>
+    </Table>
+  </div>
 </template>
 
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
+  tr:nth-child(even) {
+    background-color: rgba(243, 244, 246);
   }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-}
 </style>

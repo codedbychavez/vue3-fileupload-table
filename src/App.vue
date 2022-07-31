@@ -78,8 +78,17 @@ export default {
     handleFileUpload() {
       const formData = new FormData();
       formData.append("file", this.file);
-      console.log("Uploading...", this.file.name);
+      this.$refs[
+        `file${this.userId}`
+      ][0].innerHTML = `Uploading... ${this.file.name}`;
       // TODO: Do your fetch here
+      setTimeout(
+        function (thisScope) {
+          thisScope.reset();
+        },
+        2000,
+        this
+      );
     },
   },
 };
@@ -87,6 +96,12 @@ export default {
 
 <template>
   <div class="p-4">
+    <div class="text-center mb-4">
+      <h1 class="text-2xl">Vu3 file upload table</h1>
+      <h2 class="text-sm">
+        Drag and drop or double click on any table row to upload a file.
+      </h2>
+    </div>
     <Table :headers="headers">
       <div
         class="table-row-wrapper w-full"
@@ -112,7 +127,12 @@ export default {
           </TableData>
           <TableData>
             <!-- File input may go here -->
-            <button class="bg-gray-200 px-2 py-1 rounded-md">Upload</button>
+            <button
+              @click="handleFileUpload"
+              class="bg-gray-200 px-2 py-1 rounded-md"
+            >
+              Upload
+            </button>
             <div :ref="`file${user.id}`" class="ml-2"></div>
           </TableData>
         </TableRow>

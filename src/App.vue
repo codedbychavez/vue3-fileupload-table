@@ -79,7 +79,7 @@ export default {
       const formData = new FormData();
       formData.append("file", this.file);
       console.log("Uploading...", this.file.name);
-      // Do your fetch here
+      // TODO: Do your fetch here
     },
   },
 };

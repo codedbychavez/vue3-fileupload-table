@@ -97,7 +97,7 @@ export default {
 <template>
   <div class="p-4">
     <div class="text-center mb-4">
-      <h1 class="text-2xl">Vu3 file upload table</h1>
+      <h1 class="text-2xl">Vue3 file upload table</h1>
       <h2 class="text-sm">
         Drag and drop or double click on any table row to upload a file.
       </h2>

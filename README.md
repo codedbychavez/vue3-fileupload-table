@@ -1,6 +1,8 @@
-# vue3-fileupload-table
+# vue3-fileupload-table 📁
 
-This template should help get you started developing with Vue 3 in Vite.
+## Live Demo 👇👇
+
+https://user-images.githubusercontent.com/74829200/182030491-897df1ad-dc6b-44c3-a7b9-39b87e78b62a.mov
 
 ## Recommended IDE Setup
 

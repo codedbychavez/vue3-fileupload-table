@@ -26,6 +26,6 @@ npm run dev
 npm run build
 ```
 
-### ❤️ Show your support here:
+### I can use some coffee every now and then ☕:
 
 https://www.patreon.com/codedbychavez

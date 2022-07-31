@@ -26,6 +26,6 @@ npm run dev
 npm run build
 ```
 
-### Like this project? Show your support here:
+### ❤️ Show your support here:
 
 https://www.patreon.com/codedbychavez
